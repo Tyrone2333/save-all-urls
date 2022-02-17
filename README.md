@@ -6,6 +6,8 @@ sync方式实现了自动数据同步，相同的用户无论使用什么物理�
 
 https://chrome.google.com/webstore/detail/save-all-urls/okfkigiifcnodgjmiikiobipeongbojm/related?hl=zh-CN&authuser=0
 
+![image](https://user-images.githubusercontent.com/24988691/154421582-26338da9-5445-4901-9daa-e2d6387cff77.png)
+
 ## 使用方法
 
 * 保存当前Chrome窗口下所有的 Tab，作为一个`TabSpace`

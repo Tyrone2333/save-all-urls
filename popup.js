@@ -190,56 +190,13 @@ function TabSpaceItem(userInput, tabUrls) {
 
 var updateStats = function () {
     $(".todoList").empty()
-    for (var i = tabSpaceItems.length - 1; i >= 0; i--) {
+
+    // todo 倒序
+    for (let i = 0; i < tabSpaceItems.length; i++) {
         var oneItem = tabSpaceItems[i]
         var showString = oneItem.userInput + " [" + oneItem.tabUrls.length + "]"
         var item = todoItem(showString)
         $(".todoList").append(item)
     }
-
-    // $("#totalTodo").text(
-    //     $(".todoList li").length
-    // );
-    // $("#remainTodo").text(
-    //     $(".todoList li:not(.done)").length
-    // );
-    // if ($(".todoList li").length === 0) {
-    //     $(".todoList").addClass("empty")
-    // } else {
-    //     $(".todoList").removeClass("empty")
-    // }
 }
 
-
-//Original Todo Demo
-
-// var toggleTodo = function() {
-
-//     var $li = $(this);
-//     $li.toggleClass("done");
-//     $li.find('input[type="checkbox"]')
-//         .attr("checked", $li.hasClass('done'));
-
-//     updateStats();
-// };
-
-// var resetTodo = function() {
-
-//     var sample = [{
-//         done: false,
-//         text: "Remember to buy milk."
-//     }, {
-//         done: true,
-//         text: "Call Mom."
-//     }, {
-//         done: false,
-//         text: "Call Dad."
-//     }]
-
-//     $(".todoList li").remove();
-//     $.each(sample, function() {
-//         $(".todoList").append(todoItem(this.text, this.done));
-//     });
-//     updateStats();
-
-// };

@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //http://stackoverflow.com/questions/5767325/remove-specific-element-from-an-array
         if (index > -1) {
+            index = getInvertedIndex(index)
             tabSpaceItems.splice(index, 1)
         }
         console.log('DELEL:' + tabSpaceItems.length)
@@ -41,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $(".todoList").on('click', ".load", function () {
         var index = $(this).closest('li').index()
+index = getInvertedIndex(index)
+
         unfoldTabSpaceItem(index)
     })
 })
@@ -191,12 +194,15 @@ function TabSpaceItem(userInput, tabUrls) {
 var updateStats = function () {
     $(".todoList").empty()
 
-    // todo 倒序
-    for (let i = 0; i < tabSpaceItems.length; i++) {
+    for (var i = tabSpaceItems.length - 1; i >= 0; i--) {
+
         var oneItem = tabSpaceItems[i]
         var showString = oneItem.userInput + " [" + oneItem.tabUrls.length + "]"
         var item = todoItem(showString)
         $(".todoList").append(item)
     }
 }
-
+// 获取倒序索引, 由于列表是反着渲染, 点击获取的索引也要颠倒
+function getInvertedIndex(index) {
+    return (tabSpaceItems.length - 1) - index
+}

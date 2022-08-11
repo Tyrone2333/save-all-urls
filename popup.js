@@ -145,7 +145,7 @@ var getCurrentTabUrl = function (callback) {
 
 var saveNewTabSpaceItemToDB = function (tabSpaceItem) {
     //http://stackoverflow.com/questions/27695709/chrome-storage-sync-set-variable-key
-    tabSpaceItems.push(tabSpaceItem)
+    tabSpaceItems.unshift(tabSpaceItem)
     saveCurrentItemsToDB()
 }
 
